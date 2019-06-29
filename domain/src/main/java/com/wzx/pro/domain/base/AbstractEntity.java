@@ -18,7 +18,7 @@ public abstract class AbstractEntity implements Serializable {
     /**
      * 创建时间
      */
-    private Date createdTime;
+    private Date createdTime = new Date();
 
     /**
      * 修改时间
@@ -28,7 +28,7 @@ public abstract class AbstractEntity implements Serializable {
     /**
      * 创建人
      */
-    private String createdId;
+    private String createdId ="wangzhenxing";
 
     /**
      * 修改人

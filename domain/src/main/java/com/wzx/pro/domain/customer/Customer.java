@@ -3,10 +3,13 @@ package com.wzx.pro.domain.customer;
 import com.wzx.pro.domain.base.AbstractEntity;
 import lombok.Data;
 
+import javax.persistence.Table;
+
 /**
  * 客户
  */
 @Data
+@Table(name="customer")
 public class Customer extends AbstractEntity {
     /**
      * 客户ID

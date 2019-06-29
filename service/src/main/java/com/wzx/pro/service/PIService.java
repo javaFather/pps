@@ -18,7 +18,7 @@ public class PIService {
      */
     public  void getPI(){
         ForkJoinPool pool = new ForkJoinPool(4);
-        PITask task = new PITask(0,1_000_000_000,10_000_000);
+        PITask task = new PITask(0,999_999_999,10_000_000);
         Double reult = pool.invoke(task);
         log.info("计算π的值的结果为π：{}",reult);
 

@@ -1,5 +1,6 @@
 package com.wzx.pro.controller;
 
+import com.wzx.pro.common.util.Result;
 import com.wzx.pro.service.PIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +21,9 @@ public class TradeController {
    public  void getPI(){
         pIService.getPI();
 
+   }
+
+   public Result<String> seckillPortController(){
+        return null;
    }
 }

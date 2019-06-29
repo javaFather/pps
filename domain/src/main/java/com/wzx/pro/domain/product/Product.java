@@ -3,10 +3,13 @@ package com.wzx.pro.domain.product;
 import com.wzx.pro.domain.base.AbstractEntity;
 import lombok.Data;
 
+import javax.persistence.Table;
+
 /**
  * 商品
  */
 @Data
+@Table(name="product")
 public class Product extends AbstractEntity {
     /**
      * 商品名称
