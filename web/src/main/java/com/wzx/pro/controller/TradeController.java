@@ -22,6 +22,10 @@ public class TradeController {
         pIService.getPI();
 
    }
+    @RequestMapping("/getResult")
+   public  void getResult(){
+       String result = pIService.getResult();
+   }
 
    public Result<String> seckillPortController(){
         return null;

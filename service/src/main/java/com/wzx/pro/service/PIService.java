@@ -2,8 +2,10 @@ package com.wzx.pro.service;
 
 import com.wzx.pro.task.PITask;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.concurrent.ForkJoinPool;
 
 /**
@@ -13,6 +15,9 @@ import java.util.concurrent.ForkJoinPool;
 @Slf4j
 @Service
 public class PIService {
+
+    @Autowired
+    SeckillService seckillService;
     /**
      * 计算π
      */
@@ -22,5 +27,14 @@ public class PIService {
         Double reult = pool.invoke(task);
         log.info("计算π的值的结果为π：{}",reult);
 
+    }
+
+    public String getResult (){
+        String s = seckillService.testAop();
+        log.info("会打赢");
+
+        HashMap hashMap = new HashMap();
+
+        return s;
     }
 }

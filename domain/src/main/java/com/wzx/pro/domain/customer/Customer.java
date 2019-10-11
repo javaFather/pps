@@ -27,4 +27,9 @@ public class Customer extends AbstractEntity {
      * 身份证号
      */
     private String idNo;
+
+    public Customer(){}
+    public Customer (Customer customer){
+        this.customerId= customer.getCustomerId() ;
+    }
 }
