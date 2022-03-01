@@ -6,7 +6,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Stack;
 
-public class IterateTreeNode {
+public class _94 {
 
     //中序遍历二叉树
     public static List solution(TreeNode root) {
@@ -19,7 +19,6 @@ public class IterateTreeNode {
         result.add(root.val);
         List right = solution(root.right);
         result.addAll(right);
-
         return result;
 
     }
@@ -53,7 +52,9 @@ public class IterateTreeNode {
         root_left_1.right = root_left_1_2;
         root_right_1.right = root_right_2_2;
         List solution = inorderTraversal(root);
+        List solution1 = solution(root);
         System.out.println(JSON.toJSONString(solution));
+        System.out.println(JSON.toJSONString(solution1));
 
     }
 }
