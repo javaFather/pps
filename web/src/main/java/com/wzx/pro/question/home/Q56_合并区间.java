@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class Q56 {
+public class Q56_合并区间 {
 
     private static List<List<Integer>> solution(int[][] nums) {
         Arrays.sort(nums, new Comparator<int[]>() {

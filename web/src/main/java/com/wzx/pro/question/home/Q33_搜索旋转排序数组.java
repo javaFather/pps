@@ -1,6 +1,6 @@
 package com.wzx.pro.question.home;
 
-public class Q33 {
+public class Q33_搜索旋转排序数组 {
     private static int solution(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;

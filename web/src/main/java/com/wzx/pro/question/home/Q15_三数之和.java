@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 import java.util.Arrays;
 import java.util.List;
 
-public class Q15 {
+public class Q15_三数之和 {
 
     private static List<List<Integer>> result = Lists.newArrayList();
 

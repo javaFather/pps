@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Q117 {
+public class Q117_填充每个节点的下一个右侧节点指针II {
 
     public static MyNode solutiion(MyNode node) {
         if (node == null) {

@@ -2,7 +2,7 @@ package com.wzx.pro.question.home;
 
 import com.alibaba.fastjson.JSON;
 
-public class Q34 {
+public class Q34_在排序数组中查找元素的第一个和最后一个位置 {
 
     private static  int[] solution(int[] nums,int target){
         int left = findLeft(nums,target);

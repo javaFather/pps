@@ -2,7 +2,7 @@ package com.wzx.pro.question.home;
 
 import com.alibaba.fastjson.JSON;
 
-public class Q48 {
+public class Q48_旋转图像 {
 
     private static int[][] solution(int[][] nums) {
         int len = nums.length;

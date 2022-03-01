@@ -1,6 +1,6 @@
 package com.wzx.pro.question.home;
 
-public class Q19 {
+public class Q19_删除链表的倒数第N个结点 {
 
     public static ListNode solution(ListNode node, int index) {
 

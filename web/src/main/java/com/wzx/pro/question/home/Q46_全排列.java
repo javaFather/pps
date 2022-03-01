@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-public class Q46 {
+public class Q46_全排列 {
 
    private static List<List<Integer>> result=Lists.newArrayList() ;
     private static  List<List<Integer>> solution(int[] nums){

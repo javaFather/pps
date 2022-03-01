@@ -1,6 +1,6 @@
 package com.wzx.pro.question.home;
 
-public class Q53 {
+public class Q53_最大子数组和 {
 
     private static int solution(int[] nums) {
         int maxPath = nums[0];

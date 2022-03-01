@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Stack;
 
-public class Q5 {
+public class Q5_最长回文子串 {
     public static String solution(String s) {
         int len = s.length();
         if (len < 2) {

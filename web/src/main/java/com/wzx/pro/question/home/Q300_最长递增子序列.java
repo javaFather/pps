@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-public class Q300 {
+public class Q300_最长递增子序列 {
     public static List<Integer> solution(int[] array) {
         List<Integer> result = Lists.newArrayList();
         for(int j=0;j<array.length;j++){

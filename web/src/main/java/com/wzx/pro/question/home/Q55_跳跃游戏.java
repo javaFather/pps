@@ -1,6 +1,6 @@
 package com.wzx.pro.question.home;
 
-public class Q55 {
+public class Q55_跳跃游戏 {
     private static  boolean solution(int[] nums){
         int k =0;
         for(int i =0;i<nums.length;i++){

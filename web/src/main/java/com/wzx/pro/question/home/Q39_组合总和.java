@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-public class Q39 {
+public class Q39_组合总和 {
 
     private static List<List<Integer>> result = Lists.newArrayList();
 

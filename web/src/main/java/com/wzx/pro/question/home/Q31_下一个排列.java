@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 
 import java.util.Arrays;
 
-public class Q31 {
+public class Q31_下一个排列 {
     private static int[] solution(int[] nums){
         for(int i= nums.length-1;i>=0;i--){
             for(int j=nums.length-1;j>i;j--){

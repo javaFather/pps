@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
-public class Q76 {
+public class Q76_最小覆盖子串 {
 
     public static Queue solution(String str, String target) {
         if (StringUtils.isEmpty(str)) {

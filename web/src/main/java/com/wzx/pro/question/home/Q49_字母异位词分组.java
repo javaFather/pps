@@ -6,7 +6,7 @@ import com.google.common.collect.Maps;
 
 import java.util.*;
 
-public class Q49 {
+public class Q49_字母异位词分组 {
     private static List<List<String>> solution(String[] strs){
         List<List<String>> result = new ArrayList<>(strs.length);
         Map<String,Integer> map = Maps.newHashMap();
