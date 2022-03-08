@@ -1,6 +1,6 @@
 package com.wzx.pro.question.tik;
 
-public class Q2_146_相交连表 {
+public class Q2_146_相交链表 {
 
     private static ListNode solution(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) {
