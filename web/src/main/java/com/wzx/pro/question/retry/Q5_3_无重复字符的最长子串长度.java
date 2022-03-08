@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 
 import java.util.Map;
 
-public class Q5_3_无重复字符的最长子串 {
+public class Q5_3_无重复字符的最长子串长度 {
 
     private static int solution(String str) {
 
