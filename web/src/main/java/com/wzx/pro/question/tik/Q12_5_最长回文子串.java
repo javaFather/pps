@@ -3,41 +3,38 @@ package com.wzx.pro.question.tik;
 public class Q12_5_最长回文子串 {
 
     private static String solution(String str) {
-        int stepIndex = 0;
-        int maxLength = 0;
+        int max = 1;
+        int index = 0;
+
         int length = str.length();
+        if (length < 2) {
+            return str;
+        }
         boolean[][] dp = new boolean[length][length];
         for (int i = 0; i < length; i++) {
             dp[i][i] = true;
         }
-
-        for (int j = 1; j < length; j++) {
-            for (int i = 0; i < length; i++) {
-                char c = str.charAt(i);
-                char c1 = str.charAt(j);
-
-                if (c != c1) {
-                    dp[i][j] = false;
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (str.charAt(i) != str.charAt(j)) {
+                    dp[j][i] = false;
                 } else {
-                    if (j - i <= 2) {
-                        dp[i][j] = true;
+                    if (i - j < 2) {
+                        dp[j][i] = true;
                     } else {
-                        dp[i][j] = dp[i + 1][j - 1];
+                        dp[j][i] = dp[j + 1][i - 1];
                     }
-
                 }
-
-                if (j - i + 1 > maxLength && dp[i][j]) {
-                    maxLength = j - i + 1;
-                    stepIndex = i;
+                if (i - j + 1 > max && dp[j][i]) {
+                    max = i - j + 1;
+                    index = j;
                 }
-
 
             }
 
         }
 
-        return str.substring(stepIndex, stepIndex + maxLength);
+        return str.substring(index, index + max);
     }
 
     public static void main(String[] args) {
