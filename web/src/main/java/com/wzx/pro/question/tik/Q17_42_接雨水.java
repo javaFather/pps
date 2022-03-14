@@ -62,34 +62,40 @@ public class Q17_42_接雨水 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {4, 2, 3};
-//        int[] nums ={0,1,0,2,1,0,1,3,2,1,2,1};
+//        int[] nums = {4, 2, 3};
+        int[] nums = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         int solution = solution(nums);
+        int solution2 = solution2(nums);
         System.out.println(solution);
+        System.out.println(solution2);
     }
 
-
-    private static int solution2(int[] height) {
-        int left = 0, right = height.length - 1;
-        int ans = 0;
-        int left_max = 0, right_max = 0;
+    //双指针
+    private static int solution2(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        int left_max = 0;
+        int right_max = 0;
+        int area = 0;
         while (left < right) {
-            if (height[left] < height[right]) {
-                if (height[left] >= left_max) {
-                    left_max = height[left];
+            if (nums[left] < nums[right]) {
+                if (nums[left] > left_max) {
+                    left_max = nums[left];
                 } else {
-                    ans += (left_max - height[left]);
+                    area += left_max - nums[left];
                 }
-                ++left;
+                left++;
             } else {
-                if (height[right] >= right_max) {
-                    right_max = height[right];
+                if (nums[right] > right_max) {
+                    right_max = nums[right];
                 } else {
-                    ans += (right_max - height[right]);
+                    area += right_max - nums[right];
                 }
-                --right;
+                right--;
             }
+
         }
-        return ans;
+
+        return area;
     }
 }

@@ -14,16 +14,16 @@ public class Q18_459_重复的子字符串 {
             }
             int index = i;
             int sum = 0;
-            while (index<length){
-                String obj = str.substring(index,index+i);
-                index = index+i;
-                if(obj.equals(item)){
+            while (index < length) {
+                String obj = str.substring(index, index + i);
+                index = index + i;
+                if (obj.equals(item)) {
                     sum++;
-                }else {
+                } else {
                     break;
                 }
             }
-            if(sum == (length/len)-1){
+            if (sum == (length / len) - 1) {
                 return true;
             }
         }
@@ -32,8 +32,15 @@ public class Q18_459_重复的子字符串 {
 
 
     public static void main(String[] args) {
-        String str = "abaababaab";
+        String str = "abab";
         boolean solution = solution(str);
+        boolean b = solution2(str);
         System.out.println(solution);
+        System.out.println(b);
+    }
+
+    private static boolean solution2(String str) {
+        String temp = (str + str).substring(1, 2 * str.length()-1);
+        return temp.contains(str);
     }
 }
