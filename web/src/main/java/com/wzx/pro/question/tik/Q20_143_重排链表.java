@@ -1,7 +1,5 @@
 package com.wzx.pro.question.tik;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 public class Q20_143_重排链表 {
@@ -10,36 +8,21 @@ public class Q20_143_重排链表 {
         if (head == null) {
             return null;
         }
-        int num = 0;
-        Queue<ListNode> queue = new LinkedList<>();
-        Stack<ListNode> stack = new Stack<>();
-        ListNode result = new ListNode();
-        result.next = head;
-        ListNode pre = result.next;
-
-        while (head != null) {
-            head = head.next;
-            if (num % 2 == 0) {
-                queue.offer(head);
-            } else {
-                stack.push(head);
-            }
-            num++;
-        }
-
-        while (!queue.isEmpty() || !stack.isEmpty()) {
-            if (!stack.isEmpty()) {
-                pre.next = stack.pop();
-                pre = pre.next;
-            }
-            if (!queue.isEmpty()) {
-                pre.next = queue.poll();
+        ListNode pre = head;
+        ListNode cur = head;
+        while (pre !=null && pre.next!=null) {
+            while (pre.next.next != null) {
                 pre = pre.next;
             }
 
-
+            ListNode item = pre.next;
+            pre.next=null;
+            item.next=cur.next;
+            cur.next=item;
+            pre = cur.next.next;
+            cur = cur.next.next;
         }
-        return result.next;
+        return head;
     }
 
     public static void main(String[] args) {
@@ -52,10 +35,31 @@ public class Q20_143_重排链表 {
         head2.next = head3;
         head3.next = head4;
         head4.next = head5;
-        ListNode solution = solution(head1);
+        ListNode solution = solution2(head1);
         while (solution != null) {
             System.out.println(solution.val);
             solution = solution.next;
         }
+    }
+
+    private static ListNode solution2(ListNode head){
+        ListNode pre = head;
+        ListNode cur =head;
+        Stack<ListNode> stack = new Stack<>();
+        while (pre!=null){
+            stack.push(pre);
+            pre = pre.next;
+        }
+
+        ListNode pop = new ListNode();
+        while (cur.next!=pop.next){
+            pop = stack.pop();
+            pop.next=cur.next;
+            cur.next=pop;
+            cur =cur.next.next;
+
+        }
+        pop.next=null;
+        return head;
     }
 }
