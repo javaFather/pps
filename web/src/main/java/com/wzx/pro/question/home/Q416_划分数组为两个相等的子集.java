@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 输入：[1, 5, 11, 5]， 输出：[1, 5, 5]和[11]
  */
-public class Q_划分数组为两个相等的子集 {
+public class Q416_划分数组为两个相等的子集 {
 
     private static boolean solution(int[] nums){
         int sum =0;
