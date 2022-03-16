@@ -1,6 +1,6 @@
 package com.wzx.pro.question.tik;
 
-public class Q23_08_11_硬币{
+public class Q23_08_11_硬币NO {
 
     private static  int solution(int target){
 
