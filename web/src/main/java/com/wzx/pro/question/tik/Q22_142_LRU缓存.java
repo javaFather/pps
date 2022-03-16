@@ -1,4 +1,5 @@
 package com.wzx.pro.question.tik;
 
-public class Q22_72_编辑距离NO {
+public class Q22_142_LRU缓存 {
+
 }
