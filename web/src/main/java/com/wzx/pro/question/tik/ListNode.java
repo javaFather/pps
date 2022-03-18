@@ -1,13 +1,13 @@
 package com.wzx.pro.question.tik;
 
-public class ListNode {
-    ListNode next;
-    int val;
+public  class ListNode {
+    public ListNode next;
+    public int val;
 
-    ListNode() {
+    public ListNode() {
     }
 
-    ListNode(int val) {
+    public ListNode(int val) {
         this.val = val;
     }
 }
