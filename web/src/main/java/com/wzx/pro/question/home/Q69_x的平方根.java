@@ -3,19 +3,18 @@ package com.wzx.pro.question.home;
 public class Q69_x的平方根 {
 
     private static int solution(int num) {
-        int result =0;
-        for (long i = 0; i <=(num / 2) + 1; i++) {
-            long item = i+1;
-            if (i * i <= num && item * item > num) {
-                result = Integer.parseInt(String.valueOf(i));
-            }
-        }
-        return result;
+        return two(0, (num / 2) + 1, num);
     }
 
-    private static int two(int left ,int right){
-
-        return 0;
+    private static int two(int left, int right, int num) {
+        long mid = (right + left) / 2;
+        if (mid * mid <= num && (mid + 1) * (mid + 1) > num) {
+            return (int) mid;
+        } else if (mid * mid > num) {
+            return two(left, (int) mid - 1, num);
+        } else {
+            return two((int) mid + 1, right, num);
+        }
     }
 
     public static void main(String[] args) {
