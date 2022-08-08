@@ -32,5 +32,6 @@ public class Q2_146_相交链表 {
         bNode2.next = aNode1;
         ListNode solution = solution(headA, headB);
         System.out.println(solution == null ? solution : solution.val);
+        int[] nums = new int[]{};
     }
 }

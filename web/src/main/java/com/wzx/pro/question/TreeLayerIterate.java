@@ -3,8 +3,11 @@ package com.wzx.pro.question;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TreeLayerIterate {
     public static List<List<Integer>> levelOrder(TreeNode root) {
@@ -32,7 +35,7 @@ public class TreeLayerIterate {
         return result;
     }
 
-    public static void main(String[] args) {
+    public static  void main(String[] args) {
         TreeNode root = new TreeNode(1);
         TreeNode root_left_1 = new TreeNode(2);
         TreeNode root_right_1 = new TreeNode(3);
@@ -46,7 +49,10 @@ public class TreeLayerIterate {
         root_right_1.right = root_right_2_2;
         List solution = levelOrder(root);
         System.out.println(JSON.toJSONString(solution));
-
+        Map map = new ConcurrentHashMap();
+        map.put("11","");
+        List<List<Integer>> result = new ArrayList<>(new ArrayList<>());
+        result.size();
     }
 
 }
