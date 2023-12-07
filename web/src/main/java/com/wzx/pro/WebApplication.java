@@ -1,9 +1,9 @@
 package com.wzx.pro;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shardingsphere.shardingjdbc.spring.boot.SpringBootConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * 启动类
@@ -11,8 +11,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @date 2019/5/22 10:00
  *
  */
-@MapperScan(basePackages = "com.wzx.pro.dao")
-@SpringBootApplication
+@SpringBootApplication(exclude = SpringBootConfiguration.class)
 @Slf4j
 public class WebApplication {
 

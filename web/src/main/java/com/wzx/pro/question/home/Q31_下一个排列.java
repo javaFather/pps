@@ -24,7 +24,7 @@ public class Q31_下一个排列 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{3,2,1};
+        int[] nums = new int[]{1,2,3,5,4};
         int[] solution = solution(nums);
         System.out.println(JSON.toJSONString(solution));
     }

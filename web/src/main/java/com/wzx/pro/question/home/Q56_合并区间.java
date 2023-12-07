@@ -1,52 +1,34 @@
 package com.wzx.pro.question.home;
 
-import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Q56_合并区间 {
-
-    private static List<List<Integer>> solution(int[][] nums) {
-        Arrays.sort(nums, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
+    static class Solution {
+        public static int findDuplicate(int[] nums) {
+            int slow = 0;
+            int fast = 0;
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+            while (slow != fast) {
+                slow = nums[slow];
+                fast = nums[nums[fast]];
             }
-        });
-
-        int mergeLeft =nums[0][0];
-        int mergeRight=nums[0][1];
-
-        List<List<Integer>> result = Lists.newArrayList();
-        for (int i = 1; i < nums.length; i++) {
-            int[] item = nums[i];
-            int left = item[0];
-            int right = item[1];
-            if(mergeLeft<=left && mergeRight>=left){
-                if(mergeRight<=right){
-                    mergeRight =right;
-                }
-
-            }else {
-                List<Integer> integers = Lists.newArrayList(mergeLeft,mergeRight);
-                result.add(integers);
-                mergeLeft = left;
-                mergeRight = right;
+            int pre1 = 0;
+            int pre2 = slow;
+            while (pre1 != pre2) {
+                pre1 = nums[pre1];
+                pre2 = nums[pre2];
             }
+            return pre1;
         }
-            result.add(Lists.newArrayList(mergeLeft,mergeRight));
-
-        return result;
     }
 
+    static volatile int index = 10;
 
     public static void main(String[] args) {
-        int[][] nums = {{1, 3}, {15, 18}, {2, 6}, {8, 10}};
-//        int[][] nums = {{1, 4}, {4, 5}, {2, 6}, {8, 10}};
-        List<List<Integer>> solution = solution(nums);
-        System.out.println(JSON.toJSONString(solution));
+        ConcurrentHashMap<String,String> map = new ConcurrentHashMap<>();
+        String put = map.put("1", "2");
+        String put2 = map.put("1", "3");
+        System.out.println(put);
     }
 }

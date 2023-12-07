@@ -25,7 +25,7 @@ public class Q5_3_无重复字符的最长子串长度 {
 
 
     public static void main(String[] args) {
-        String s = "abcdasdfght";
+        String s = "abcdasd";
         int solution = solution(s);
         System.out.println(solution);
     }

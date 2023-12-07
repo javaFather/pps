@@ -1,13 +1,12 @@
 package com.wzx.pro.question.tik.hot;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Q24_215_数组中的第K个最大元素 {
-    private static int solution(int[] nums,int k) {
-        int[] sorNums = quickSort(nums, 0, nums.length - 1);
-        return sorNums[sorNums.length-k];
-    }
+
 
     private static  int solution2(int[] nums,int k){
         Queue<Integer> queue = new PriorityQueue<>();
@@ -21,40 +20,50 @@ public class Q24_215_数组中的第K个最大元素 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3,2,3,1,2,4,5,5,6};
-        int solution = solution(nums,4);
-        System.out.println(solution);
+        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        maxSubArray(nums);
     }
 
-    private static int[] quickSort(int[] nums,int start,int end) {
-        int startNum = nums[start];
-        int left =start;
-        int right =end;
-        while (left < right) {
-          while (left < right && nums[right]>startNum){
-              right--;
-          }
-          while (left < right && nums[left]<startNum){
-              left++;
-          }
-          if (left<right && nums[left]==nums[right]){
-              left++;
-          }else{
-              int temp = nums[left];
-              nums[left]=nums[right];
-              nums[right]= temp;
+    private static void quickSort(int[] arr, int startIndex, int endIndex) {
+        if (startIndex >= endIndex) {
+            return;
+        }
+
+        int pivotIndex = quickSortMain(arr, startIndex, endIndex);
+        // 用分界值下标区分出左右区间，进行递归调用
+        quickSort(arr, startIndex, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, endIndex);
+    }
+
+
+    private static int quickSortMain(int[] nums,int startLeft,int startRight){
+        int firstNum = nums[startLeft];
+        int left =startLeft;
+        int right = startRight;
+        while(left<right){
+            while(left<right && nums[left]<=firstNum){
+                left++;
             }
-        }
+            while(left<right && nums[right]>firstNum){
+                right--;
+            }
+            if(left<right){
+                int temp = nums[left];
+                nums[left]=nums[right];
+                nums[right]=temp;
+            }
 
-        if(left>start){
-           nums= quickSort(nums,start,left-1);
         }
-
-        if(end>right){
-            nums= quickSort(nums,right+1,end);
-        }
-
-        return nums;
+        nums[startLeft] =nums[right];
+        nums[right]=firstNum;
+        return right;
     }
 
+
+
+    private static void maxSubArray(int[] nums) {
+            int len = nums.length;
+
+
+    }
 }

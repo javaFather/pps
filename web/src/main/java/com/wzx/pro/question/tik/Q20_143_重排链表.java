@@ -3,26 +3,29 @@ package com.wzx.pro.question.tik;
 import java.util.Stack;
 
 public class Q20_143_重排链表 {
-
-    private static ListNode solution(ListNode head) {
-        if (head == null) {
-            return null;
-        }
-        ListNode pre = head;
-        ListNode cur = head;
-        while (pre !=null && pre.next!=null) {
-            while (pre.next.next != null) {
-                pre = pre.next;
+        public static void reorderList(ListNode head) {
+            Stack<ListNode> stack = new Stack<>();
+            ListNode pre = head;
+            ListNode cur = head;
+            while(pre!=null){
+                stack.add(pre);
+                pre=pre.next;
             }
 
-            ListNode item = pre.next;
-            pre.next=null;
-            item.next=cur.next;
-            cur.next=item;
-            pre = cur.next.next;
-            cur = cur.next.next;
-        }
-        return head;
+            while(cur!=null){
+                if(cur==stack.peek()){
+
+                }
+                if(cur!=stack.peek()){
+                    ListNode  node = stack.pop();
+                    node.next = cur.next;
+                    cur.next = node;
+                    cur = cur.next.next;
+                }else{
+                    cur.next=null;
+                    return ;
+                }
+            }
     }
 
     public static void main(String[] args) {
@@ -30,15 +33,15 @@ public class Q20_143_重排链表 {
         ListNode head2 = new ListNode(2);
         ListNode head3 = new ListNode(3);
         ListNode head4 = new ListNode(4);
-        ListNode head5 = new ListNode(5);
+//        ListNode head5 = new ListNode(5);
         head1.next = head2;
         head2.next = head3;
         head3.next = head4;
-        head4.next = head5;
-        ListNode solution = solution2(head1);
-        while (solution != null) {
-            System.out.println(solution.val);
-            solution = solution.next;
+//        head4.next = head5;
+        reorderList(head1);
+        while (head1 != null) {
+            System.out.println(head1.val);
+            head1 = head1.next;
         }
     }
 

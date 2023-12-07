@@ -105,12 +105,12 @@ public class Q5_最长回文子串 {
 
 
     public static void main(String[] args) {
-        String str = "一个上海自来水来自海上的故事";
+        String str = "cbbd";
 //        String solution = solution(str);
 //        System.out.printf(solution);
 //        String max = max(str);
 //        System.out.println(max);
-        String s = mySolution(str);
+        String s = countSubstrings(str);
         System.out.println(s);
 
     }
@@ -143,6 +143,26 @@ public class Q5_最长回文子串 {
             result = result.append(stack.pop());
         }
         return result.toString();
+    }
+
+        public static String countSubstrings(String s) {
+            // 动态规划法
+            boolean[][] dp = new boolean[s.length()][s.length()];
+            int max = 0;
+            int index =0;
+            for (int j = 0; j < s.length(); j++) {
+                for (int i = 0; i <= j; i++) {
+                    if (s.charAt(i) == s.charAt(j) && (j - i < 2 || dp[i + 1][j - 1])) {
+                        dp[i][j] = true;
+                        if(j-i+1>max){
+                            max = j-i+1;
+                            index =i;
+                        }
+                    }
+                }
+            }
+
+            return s.substring(index,index+max);
     }
 
 
